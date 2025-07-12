@@ -45,7 +45,9 @@
         <p class="footer-copy">© <?php echo date( 'Y' ); ?> <?php bloginfo( 'name' ); ?> — جميع الحقوق محفوظة.</p>
 
         <!-- زر العودة للأعلى -->
+        <?php if ( get_theme_mod( 'muhtawaa_show_back_to_top', true ) ) : ?>
         <button id="back-to-top" title="العودة للأعلى">↑</button>
+        <?php endif; ?>
 
     </div>
 </footer>

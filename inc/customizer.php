@@ -281,6 +281,19 @@ function muhtawaa_customize_register($wp_customize) {
         'section' => 'muhtawaa_display',
         'type'    => 'checkbox',
     ));
+
+    // إظهار زر العودة للأعلى
+    $wp_customize->add_setting('muhtawaa_show_back_to_top', array(
+        'default'           => true,
+        'sanitize_callback' => 'wp_validate_boolean',
+        'transport'         => 'postMessage',
+    ));
+
+    $wp_customize->add_control('muhtawaa_show_back_to_top', array(
+        'label'   => __('إظهار زر العودة للأعلى', 'muhtawaa'),
+        'section' => 'muhtawaa_display',
+        'type'    => 'checkbox',
+    ));
     
     // إظهار زر الاستماع للمقال
     $wp_customize->add_setting('muhtawaa_show_audio_button', array(
@@ -641,6 +654,12 @@ function muhtawaa_customizer_css() {
         
         <?php if (!get_theme_mod('muhtawaa_show_share_buttons', true)) : ?>
         .share-buttons {
+            display: none !important;
+        }
+        <?php endif; ?>
+        <?php if (!get_theme_mod('muhtawaa_show_back_to_top', true)) : ?>
+        #back-to-top,
+        .back-to-top {
             display: none !important;
         }
         <?php endif; ?>
