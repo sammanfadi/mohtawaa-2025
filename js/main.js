@@ -25,7 +25,9 @@
         initArticleFilters();
         initSmoothScrolling();
         initShareButtons();
-        initBackToTop();
+        if (settings.showBackToTop !== false) {
+            initBackToTop();
+        }
         initLazyLoading();
     });
 
