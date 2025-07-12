@@ -1,0 +1,420 @@
+/**
+ * أنماط الوضع الليلي لقالب muhtawaa
+ * تحسينات خاصة للقراءة الليلية
+ */
+
+/* متغيرات الوضع الليلي */
+body.dark-mode {
+  /* الألوان الأساسية */
+  --background-color: #1a1a1a;
+  --secondary-color: #2d2d2d;
+  --text-color: #ffffff;
+  --text-secondary: #b0b0b0;
+  --border-color: #404040;
+  --shadow-color: rgba(255, 255, 255, 0.1);
+
+  /* لون الروابط الافتراضي */
+  --dark-link-color: #66b3ff;
+  
+  /* ألوان خاصة بالوضع الليلي */
+  --dark-card-hover: #353535;
+  --dark-input-bg: #333333;
+  --dark-scrollbar: #555555;
+}
+
+/* تحسينات خاصة للوضع الليلي */
+body.dark-mode {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* الهيدر في الوضع الليلي */
+body.dark-mode .site-header {
+  background-color: var(--background-color);
+  border-bottom-color: var(--border-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .site-title {
+  color: var(--text-color);
+}
+
+body.dark-mode .site-description {
+  color: var(--text-secondary);
+}
+
+/* التنقل في الوضع الليلي */
+body.dark-mode .nav-menu a {
+  color: var(--text-color);
+}
+
+body.dark-mode .nav-menu a:hover,
+body.dark-mode .nav-menu a.current {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* شريط التصنيفات في الوضع الليلي */
+body.dark-mode .categories-bar {
+  background-color: var(--secondary-color);
+  border-bottom-color: var(--border-color);
+}
+
+body.dark-mode .category-tag {
+  background-color: var(--dark-input-bg);
+  color: var(--text-secondary);
+  border-color: var(--border-color);
+}
+
+body.dark-mode .category-tag:hover,
+body.dark-mode .category-tag.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* بطاقات المقالات في الوضع الليلي */
+body.dark-mode .article-card {
+  background-color: var(--secondary-color);
+  border-color: var(--border-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .article-card:hover {
+  background-color: var(--dark-card-hover);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .article-title {
+  color: var(--text-color);
+}
+
+body.dark-mode .article-title a:hover {
+  color: var(--primary-color);
+}
+
+body.dark-mode .article-excerpt {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .article-meta {
+  color: var(--text-secondary);
+}
+
+/* صفحة المقال في الوضع الليلي */
+body.dark-mode .article-main-title {
+  color: var(--text-color);
+}
+
+body.dark-mode .article-content {
+  color: var(--text-color);
+}
+
+body.dark-mode .article-content h2,
+body.dark-mode .article-content h3 {
+  color: var(--text-color);
+}
+
+body.dark-mode .article-info {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .back-to-home {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .back-to-home:hover {
+  color: var(--primary-color);
+}
+
+/* أزرار المشاركة في الوضع الليلي */
+body.dark-mode .share-btn {
+  background-color: var(--secondary-color);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+body.dark-mode .share-btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* المقالات المشابهة في الوضع الليلي */
+body.dark-mode .related-articles {
+  border-top-color: var(--border-color);
+}
+
+body.dark-mode .related-articles h3 {
+  color: var(--text-color);
+}
+
+body.dark-mode .related-card {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--border-color);
+}
+
+body.dark-mode .related-card:hover {
+  background-color: var(--dark-card-hover);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .related-card h4 {
+  color: var(--text-color);
+}
+
+body.dark-mode .related-card h4 a:hover {
+  color: var(--primary-color);
+}
+
+/* الفوتر في الوضع الليلي */
+body.dark-mode .site-footer {
+  background-color: var(--secondary-color);
+  border-top-color: var(--border-color);
+}
+
+body.dark-mode .footer-description {
+  color: var(--text-color);
+}
+
+body.dark-mode .footer-tagline {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .footer-nav a {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .footer-nav a:hover {
+  color: var(--primary-color);
+}
+
+body.dark-mode .footer-copyright {
+  color: var(--text-secondary);
+}
+
+/* نظام الفلترة في الوضع الليلي */
+body.dark-mode .filter-title {
+  color: var(--text-color);
+}
+
+body.dark-mode .filter-btn {
+  background-color: var(--secondary-color);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+body.dark-mode .filter-btn:hover,
+body.dark-mode .filter-btn.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* تحسينات خاصة للقراءة الليلية */
+body.dark-mode .article-content {
+  /* تحسين تباعد الأسطر للقراءة الليلية */
+  line-height: 1.9;
+  
+  /* تحسين لون النص للراحة البصرية */
+  color: #e8e8e8;
+}
+
+/* التعليقات في الوضع الليلي */
+body.dark-mode .comment-list .comment {
+  border-color: var(--dark-border);
+  background-color: var(--dark-card-bg);
+}
+
+body.dark-mode .comment-form-wrapper input,
+body.dark-mode .comment-form-wrapper textarea {
+  background-color: var(--dark-card-bg);
+  border-color: var(--dark-border);
+  color: var(--dark-text);
+}
+
+body.dark-mode .article-content p {
+  /* تحسين المسافات بين الفقرات */
+  margin-bottom: 1.8rem;
+}
+
+/* تحسين الروابط في الوضع الليلي */
+body.dark-mode a {
+  color: var(--dark-link-color);
+}
+
+body.dark-mode a:hover {
+  color: var(--primary-color);
+}
+
+/* تحسين النماذج في الوضع الليلي */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background-color: var(--dark-input-bg);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus,
+body.dark-mode select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+/* تحسين شريط التمرير في الوضع الليلي */
+body.dark-mode::-webkit-scrollbar {
+  width: 8px;
+}
+
+body.dark-mode::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+body.dark-mode::-webkit-scrollbar-thumb {
+  background: var(--dark-scrollbar);
+  border-radius: 4px;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb:hover {
+  background: #666666;
+}
+
+/* تحسين الجداول في الوضع الليلي */
+body.dark-mode table {
+  background-color: var(--secondary-color);
+  border-color: var(--border-color);
+}
+
+body.dark-mode th {
+  background-color: var(--dark-input-bg);
+  color: var(--text-color);
+}
+
+body.dark-mode td {
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+/* تحسين الكود في الوضع الليلي */
+body.dark-mode code {
+  background-color: var(--dark-input-bg);
+  color: #ff6b6b;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+body.dark-mode pre {
+  background-color: var(--dark-input-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+/* تحسين الاقتباسات في الوضع الليلي */
+body.dark-mode blockquote {
+  background-color: var(--secondary-color);
+  border-right: 4px solid var(--primary-color);
+  color: var(--text-secondary);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+}
+
+/* تحسين القوائم في الوضع الليلي */
+body.dark-mode ul,
+body.dark-mode ol {
+  color: var(--text-color);
+}
+
+body.dark-mode li {
+  margin-bottom: 0.5rem;
+}
+
+/* تأثيرات انتقال محسنة للوضع الليلي */
+body.dark-mode * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* تحسين الصور في الوضع الليلي */
+body.dark-mode img {
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+body.dark-mode img:hover {
+  opacity: 1;
+}
+
+/* تحسين الفيديو في الوضع الليلي */
+body.dark-mode video {
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* تحسين الإشعارات في الوضع الليلي */
+body.dark-mode .notification {
+  background-color: var(--secondary-color) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* تحسين زر العودة للأعلى في الوضع الليلي */
+body.dark-mode .back-to-top {
+  background-color: var(--primary-color) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* تحسين مؤشر التقدم في الوضع الليلي */
+body.dark-mode .reading-progress {
+  background-color: var(--border-color);
+}
+
+body.dark-mode .reading-progress-bar {
+  background-color: var(--progress-color);
+  box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+}
+
+/* تحسينات للطباعة في الوضع الليلي */
+@media print {
+  body.dark-mode {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  body.dark-mode * {
+    background-color: white !important;
+    color: black !important;
+  }
+}
+
+/* تحسينات للأجهزة المحمولة في الوضع الليلي */
+@media (max-width: 768px) {
+  body.dark-mode .article-content {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+  
+  body.dark-mode .article-card {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* تحسين التباين للوصولية */
+@media (prefers-contrast: high) {
+  body.dark-mode {
+    --text-color: #ffffff;
+    --text-secondary: #cccccc;
+    --background-color: #000000;
+    --secondary-color: #1a1a1a;
+  }
+}
+
+/* تحسين للمستخدمين الذين يفضلون تقليل الحركة */
+@media (prefers-reduced-motion: reduce) {
+  body.dark-mode * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

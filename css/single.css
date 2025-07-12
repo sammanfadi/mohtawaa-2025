@@ -1,0 +1,40 @@
+.article-featured-image {
+    margin: var(--spacing-lg) 0;
+    text-align: center;
+}
+
+.article-featured-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.article-tags-section {
+    margin: var(--spacing-xl) 0;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+}
+
+.article-tags-section h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-color);
+    font-size: var(--font-size-lg);
+}
+
+/* post navigation styles removed */
+
+/* تحسينات للأجهزة المحمولة */
+@media (max-width: 768px) {
+    /* navigation styles removed */
+
+    .share-buttons {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .share-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

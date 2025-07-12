@@ -1,0 +1,124 @@
+/* ========= Layout ========= */
+:root{
+    --header-height: 80px;
+}
+.site-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--background-color, #fff);
+    border-bottom: 1px solid var(--border-color, #eee);
+    box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    backdrop-filter: blur(5px);
+    transition: top .3s ease-in-out, background .3s;
+}
+.header-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:clamp(0.5rem,1.5vw,1rem) 0;
+    flex-wrap:wrap;
+    gap:1rem;
+}
+body{padding-top:var(--header-height);}
+
+/* ========= Branding ========= */
+.site-branding{display:flex;flex-direction:column;gap:.25rem}
+.site-title{margin:0;font-size:var(--font-size-2xl,1.5rem);font-weight:700;line-height:1.2}
+.site-title a{color:var(--text-color,#222);text-decoration:none;transition:color .2s}
+.site-title a:hover{color:var(--primary-color,#0073aa)}
+.site-description{margin:0;font-size:var(--font-size-base,.9rem);color:var(--text-secondary,#666);font-weight:300}
+
+/* ========= Navigation ========= */
+.main-navigation{display:flex;align-items:center;gap:1.5rem}
+.nav-menu{display:flex;list-style:none;margin:0;padding:0;gap:1.5rem}
+.nav-menu a{color:var(--text-color,#222);text-decoration:none;font-weight:500;padding:.25rem .5rem;border-radius:4px;transition:background .2s,color .2s}
+.nav-menu a:hover,
+.nav-menu .current-menu-item > a,
+.nav-menu .current_page_item > a{background:var(--primary-color,#0073aa);color:#fff}
+
+/* ========= Search ========= */
+.header-search form{display:flex;align-items:center}
+.header-search input[type="search"]{
+    padding:.4rem .8rem;
+    border:1px solid var(--border-color,#ddd);
+    border-radius:4px 0 0 4px;
+    flex:1;
+    min-width:200px;
+}
+.header-search button{
+    padding:.4rem .8rem;
+    border:1px solid var(--border-color,#ddd);
+    border-left:0;
+    border-radius:0 4px 4px 0;
+    background:var(--primary-color,#0073aa);
+    color:#fff;
+    cursor:pointer;
+}
+
+/* ========= Dark‑mode toggle ========= */
+.dark-mode-toggle{
+    background:none;
+    border:2px solid var(--border-color,#ddd);
+    border-radius:50px;
+    width:60px;
+    height:30px;
+    position:relative;
+    cursor:pointer;
+    transition:border .3s;
+    padding:0;
+}
+.dark-mode-toggle::before{
+    content:'';
+    position:absolute;
+    top:2px;right:2px;
+    width:22px;height:22px;
+    background:var(--text-color,#222);
+    border-radius:50%;
+    transition:transform .3s, background .3s;
+}
+body.dark-mode .dark-mode-toggle{
+    border-color:var(--primary-color,#0073aa);
+}
+body.dark-mode .dark-mode-toggle::before{
+    transform:translateX(-28px);
+    background:var(--primary-color,#0073aa);
+}
+
+/* ========= Categories bar ========= */
+.categories-bar{
+    background:var(--secondary-color,#f7f7f7);
+    border-bottom:1px solid var(--border-color,#eee);
+    padding:.5rem 0;
+}
+.categories-list{display:flex;justify-content:center;gap:1rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.category-tag{
+    background:#fff;
+    color:var(--text-secondary,#666);
+    padding:.25rem 1rem;
+    border-radius:25px;
+    font-size:.875rem;font-weight:500;
+    border:1px solid var(--border-color,#ddd);
+    transition:background .2s,color .2s,border .2s;
+}
+.category-tag:hover,
+.category-tag.active{background:var(--primary-color,#0073aa);color:#fff;border-color:var(--primary-color,#0073aa)}
+
+/* ========= Mobile adjustments ========= */
+@media (max-width:768px){
+    .header-content{flex-direction:column;text-align:center;gap:.75rem}
+    .main-navigation{width:100%;flex-direction:column;gap:.75rem}
+    .nav-menu{flex-wrap:wrap;justify-content:center;gap:.75rem}
+    .header-search input[type="search"]{min-width:150px}
+}
+@media (max-width:480px){
+    .nav-menu{flex-direction:column;gap:.5rem;width:100%}
+    .nav-menu a{text-align:center;width:100%}
+    .dark-mode-toggle{width:50px;height:25px}
+    .dark-mode-toggle::before{width:19px;height:19px}
+}
+
+/* ========= Utility ========= */
+.site-header.hidden{top:-120px;}
