@@ -509,6 +509,36 @@ function muhtawaa_customize_register($wp_customize) {
         'section'  => 'muhtawaa_dark_mode',
         'settings' => 'muhtawaa_dark_link_color',
     )));
+
+    // قسم الأكواد المخصصة
+    $wp_customize->add_section('muhtawaa_custom_code', array(
+        'title'    => __('الأكواد المخصصة', 'muhtawaa'),
+        'priority' => 60,
+    ));
+
+    // CSS مخصص
+    $wp_customize->add_setting('muhtawaa_custom_css', array(
+        'default'           => '',
+        'sanitize_callback' => 'wp_strip_all_tags',
+    ));
+
+    $wp_customize->add_control('muhtawaa_custom_css', array(
+        'label'   => __('CSS مخصص', 'muhtawaa'),
+        'section' => 'muhtawaa_custom_code',
+        'type'    => 'textarea',
+    ));
+
+    // JavaScript مخصص
+    $wp_customize->add_setting('muhtawaa_custom_js', array(
+        'default'           => '',
+        'sanitize_callback' => 'wp_strip_all_tags',
+    ));
+
+    $wp_customize->add_control('muhtawaa_custom_js', array(
+        'label'   => __('JavaScript مخصص', 'muhtawaa'),
+        'section' => 'muhtawaa_custom_code',
+        'type'    => 'textarea',
+    ));
     
 }
 add_action('customize_register', 'muhtawaa_customize_register');
@@ -674,8 +704,23 @@ function muhtawaa_customizer_css() {
             display: none !important;
         }
         <?php endif; ?>
+        <?php $custom_css = get_theme_mod('muhtawaa_custom_css', '');
+        if ($custom_css) : ?>
+        <?php echo $custom_css; ?>
+        <?php endif; ?>
     </style>
     <?php
 }
 add_action('wp_head', 'muhtawaa_customizer_css');
+
+/**
+ * طباعة JavaScript المخصص من التخصيص
+ */
+function muhtawaa_customizer_js() {
+    $custom_js = get_theme_mod('muhtawaa_custom_js', '');
+    if ($custom_js) {
+        echo '<script type="text/javascript">' . $custom_js . '</script>';
+    }
+}
+add_action('wp_footer', 'muhtawaa_customizer_js');
 ?>
